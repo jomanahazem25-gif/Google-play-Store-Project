@@ -1,0 +1,26 @@
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+
+st.title("⭐ App Insights")
+
+df = pd.read_csv("googleplaystore.csv")
+
+# Clean installs
+df["Installs"] = df["Installs"].astype(str).str.replace(",", "").str.replace("+", "")
+df["Installs"] = pd.to_numeric(df["Installs"], errors="coerce")
+
+# Rating vs installs
+fig = px.scatter(df, x="Rating", y="Installs",
+                 title="Rating vs Installs",
+                 hover_data=["App"])
+st.plotly_chart(fig, use_container_width=True)
+
+# Size vs installs
+df["Size"] = df["Size"].replace("Varies with device", None)
+df["Size"] = df["Size"].str.replace("M", "").str.replace("k", "")
+df["Size"] = pd.to_numeric(df["Size"], errors="coerce")
+
+fig2 = px.scatter(df, x="Size", y="Installs",
+                  title="Size vs Installs")
+st.plotly_chart(fig2, use_container_width=True)
