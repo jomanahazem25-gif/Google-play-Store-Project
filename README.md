@@ -10,7 +10,7 @@ Exploratory analysis of the Google Play Store dataset. The project covers data c
 
 Google_Play_Store_Project.ipynb       # main analysis notebook
 app.py                                # Streamlit dashboard
-googleplaystore.csv                   # app metadata (10,841 rows) googleplaystore_user_reviews.csv      # user reviews (64,295 rows)
+googleplaystore.csv                   # app metadata (10,841 rows) googleplaystore_user_reviews.csv 
 requirements.txt
 README.md
 ```
@@ -84,6 +84,13 @@ pip install -r requirements.txt
 
 # 3. open the notebook
 jupyter notebook Google_Play_Store_Project.ipynb
+
+## Streamlit dashboard
+
+The dashboard has four tabs:
+
+- **Univariate** — category distribution, rating histogram, free/paid pie, size histogram, treemap
+- **Bivariate** — price vs rating, rating vs installs, android version boxplot, size vs installs, rating vs size
 
 
 ## Requirements
