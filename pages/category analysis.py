@@ -4,7 +4,7 @@ import plotly.express as px
 
 st.title("📂 Category Analysis")
 
-df = pd.read_csv("googleplaystore.csv")
+df = pd.read_csv("googleplaystore 2.csv")
 
 # Category distribution
 fig = px.histogram(df, y="Category", title="App Categories Distribution")
